@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #e0f2fe, #f0f9ff);
+  color: #1f2937;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.gallery-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gallery-header h1 {
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: 0.4px;
+}
+
+.gallery-header p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.gallery-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.full-img {
+  margin-bottom: 24px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.displayed-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.displayed-img:hover {
+  transform: scale(1.01);
+}
+
+.thumb-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.thumb-bar img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.thumb-bar img:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+  box-shadow: 0 10px 22px rgba(56, 189, 248, 0.18);
+}
+
+.thumb-bar img.active {
+  border-color: #0ea5e9;
+  box-shadow: 0 10px 24px rgba(14, 165, 233, 0.22);
+}
+
+@media (max-width: 768px) {
+  .gallery-header h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-header p {
+    font-size: 0.95rem;
+  }
+
+  .displayed-img {
+    height: 380px;
+  }
+
+  .thumb-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 24px 14px;
+  }
+
+  .gallery-card {
+    padding: 16px;
+  }
+
+  .displayed-img {
+    height: 280px;
+  }
+
+  .thumb-bar {
+    grid-template-columns: 1fr;
+  }
+}
